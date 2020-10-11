@@ -1,28 +1,20 @@
 'use strict';
-const path = require('path');
+const readUserName = require('github-username');
+const shell = require('shelljs');
 const ini = require('ini');
+const path = require('path');
 const fs = require('fs');
+const os = require('os');
 
-module.exports = async options => {
-	options = {
-		dir: process.env.HOME || process.env.USERPROFILE,
-		...options
-	};
+module.exports = async () => {
+	const configPath = path.resolve(os.homedir(), '.gitconfig');
+	let {email} = ini.parse(await fs.promises.readFile(configPath, 'utf-8')).user;
 
-	const filePath = path.resolve(options.dir, '.gitconfig');
-	const {user} = ini.parse(await fs.promises.readFile(filePath, 'utf-8'));
+	if (email === undefined && shell.which('git')) {
+		email = shell.exec('git config --get user.email', {silent: true}).stdout.trim();
+	}
 
-	return {...user};
-};
+	const username = await readUserName(email);
 
-module.exports.sync = options => {
-	options = {
-		dir: process.env.HOME || process.env.USERPROFILE,
-		...options
-	};
-
-	const filePath = path.resolve(options.dir, '.gitconfig');
-	const {user} = ini.parse(fs.readFileSync(filePath, 'utf-8'));
-
-	return {...user};
+	return {username, email};
 };
