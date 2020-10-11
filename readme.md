@@ -1,6 +1,12 @@
-# read-git-user ![build](https://travis-ci.com/RocktimSaikia/read-git-user.svg?branch=master) ![license](https://img.shields.io/github/license/rocktimsaikia/read-git-user)
+# read-git-user ![build](https://travis-ci.com/RocktimSaikia/read-git-user.svg?branch=master)
 
-> Read the username and email from `.gitconfig` :wrench: and returns it as json object
+> Reads the username and email from `.gitconfig` :wrench: and returns it as json object
+
+## Highlights
+
+- Simple and easy to use
+- Only 1.3kB :sparkles:
+- Uses [Ini](https://github.com/npm/ini) to handle the parsing of the `ini config` file
 
 ## Install
 ```bash
@@ -25,7 +31,11 @@ import readGitUser = require('read-git-user');
 
 ### readGitUser(options?)
 
-Takes one unicorn and returns two. Awesome stuff!!
+Returns a `Promise<object>` with the parsed JSON.
+
+### readGitUser.async(options?)
+
+Returns the parsed JSON.
 
 #### options
 
