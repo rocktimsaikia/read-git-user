@@ -1,6 +1,6 @@
 # read-git-user ![build](https://travis-ci.com/RocktimSaikia/read-git-user.svg?branch=master) ![license](https://img.shields.io/github/license/rocktimsaikia/read-git-user)
 
-> Read the username and email from `.gitconfig` :wrench: and returns it as a json object
+> Read the username and email from `.gitconfig` :wrench: and returns it as json object
 
 ## Install
 ```bash

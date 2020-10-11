@@ -13,8 +13,7 @@ declare namespace readGitUser {
 
 declare const readGitUser: {
 	/**
-     Read the username and email from .gitconfig
-     parses and returns it as JSON object.
+     Read the username and email from `.gitconfig` and returns it as json object
 
      @example
      ```js
@@ -27,8 +26,7 @@ declare const readGitUser: {
 	sync: <T = string>(options?: readGitUser.Options) => Record<string, T>;
 
 	/**
-     Read the username and email from .gitconfig
-     parses and returns it as JSON object.
+     Read the username and email from `.gitconfig` and returns it as json object
 
      @example
      ```js
