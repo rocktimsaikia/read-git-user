@@ -1,11 +1,11 @@
 # read-git-user ![build](https://travis-ci.com/RocktimSaikia/read-git-user.svg?branch=master)
 
-> Reads the username and email from `.gitconfig` :wrench: and returns it as json object
+> Reads the Github username and email from `.gitconfig` :wrench: and returns it as a json object
 
 ## Highlights
 
-- Simple and easy to use
-- Only 1.3kB :sparkles:
+- Tiny(1.3kB :sparkles:) and simple
+- Returns the original `github-username` as the local git `name` can be altered. See [Stackoverflow#9360234](https://stackoverflow.com/a/28142874/9360234).
 - Uses [Ini](https://github.com/npm/ini) to handle the parsing of the `ini config` file
 
 ## Install
@@ -21,9 +21,6 @@ import readGitUser = require('read-git-user');
 (async () => {
         const gitUser = await readGitUser();
         //=> {user: rocktimsaikia, email: rocktimsaikia@gmail.com}
-
-        const gitUser = readGitUser.sync()
-        //=> {user: rocktimsaikia, email: rocktimsaikia@gmail.com}
 })();
 ```
 
@@ -33,18 +30,14 @@ import readGitUser = require('read-git-user');
 
 Returns a `Promise<object>` with the parsed JSON.
 
-### readGitUser.async(options?)
-
-Returns the parsed JSON.
-
 #### options
 
 ##### dir
 
 Type: `string`<br>
-Default: `process.env.HOME || process.env.USERPROFILE`
+Default: `os.homedir()`
 
-The directory of .gitconfig file
+The directory of the `.gitconfig` file
 
 ## Support
 
