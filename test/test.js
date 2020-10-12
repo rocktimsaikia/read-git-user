@@ -3,26 +3,25 @@ import readGitConfig from '..';
 
 process.chdir(__dirname);
 
-test('async, main', async t => {
-	t.is(Object.keys(await readGitConfig()).length, 2);
-	t.true(Object.prototype.hasOwnProperty.call(await readGitConfig(), 'name'));
-	t.true(Object.prototype.hasOwnProperty.call(await readGitConfig(), 'email'));
-});
+/**
+@todo Set up a fake git enviroment beforehand to test without specifying a dir
 
-test('sync, main', t => {
-	t.is(Object.keys(readGitConfig.sync()).length, 2);
-	t.true(Object.prototype.hasOwnProperty.call(readGitConfig.sync(), 'name'));
-	t.true(Object.prototype.hasOwnProperty.call(readGitConfig.sync(), 'email'));
+Test('async, main', async t => {
+	const userConfig = await readGitConfig();
+
+	t.is(Object.keys(userConfig).length, 2);
+	t.true(Object.prototype.hasOwnProperty.call(userConfig, 'username'));
+	t.true(Object.prototype.hasOwnProperty.call(userConfig, 'email'));
 });
+*/
 
 test('async, with --dir option', async t => {
-	t.is(Object.keys(await readGitConfig({dir: './'})).length, 2);
-	t.true(Object.prototype.hasOwnProperty.call(await readGitConfig(), 'name'));
-	t.true(Object.prototype.hasOwnProperty.call(await readGitConfig(), 'email'));
-});
+	const userConfig = await readGitConfig({dir: './'});
 
-test('sync, with --dir option', t => {
-	t.is(Object.keys(readGitConfig.sync({dir: './'})).length, 2);
-	t.true(Object.prototype.hasOwnProperty.call(readGitConfig.sync(), 'name'));
-	t.true(Object.prototype.hasOwnProperty.call(readGitConfig.sync(), 'email'));
+	t.is(Object.keys(userConfig).length, 2);
+	t.true(Object.prototype.hasOwnProperty.call(userConfig, 'username'));
+	t.true(Object.prototype.hasOwnProperty.call(userConfig, 'email'));
+
+	t.is(userConfig.email, 'rocktimthedev@gmail.com');
+	t.is(userConfig.username, 'RocktimSaikia');
 });

@@ -1,7 +1,7 @@
 {
 	"name": "read-git-user",
 	"version": "1.0.1",
-	"description": "Reads the username and email from .gitconfig and return it as json object",
+	"description": "Reads the Github username and email from .gitconfig and return it as a json object",
 	"keywords": [
 		"git",
 		"config",
@@ -25,6 +25,7 @@
 		"test": "xo && ava"
 	},
 	"dependencies": {
+		"github-username": "^5.0.1",
 		"ini": "^1.3.5"
 	},
 	"devDependencies": {

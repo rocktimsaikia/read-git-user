@@ -9,24 +9,14 @@ declare namespace readGitUser {
           */
 		readonly dir?: string;
 	}
+
+	interface User {
+		username: string;
+		email: string;
+	}
 }
-
-declare const readGitUser: {
-	/**
-     Read the username and email from `.gitconfig` and returns it as json object
-
-     @example
-     ```js
-     import readGitUser = require('read-git-user');
-
-     const gitUser = readGitUser.sync()
-     //=> {user: rocktimsaikia, email: rocktimsaikiagmail.com}
-     ```
-     */
-	sync: <T = string>(options?: readGitUser.Options) => Record<string, T>;
-
-	/**
-     Read the username and email from `.gitconfig` and returns it as json object
+/**
+     Read the Github username and email from `.gitconfig` and returns it as a json object
 
      @example
      ```js
@@ -37,8 +27,7 @@ declare const readGitUser: {
             //=> {user: rocktimsaikia, email: rocktimsaikiagmail.com}
      })();
      ```
-     */
-	<T = string>(options?: readGitUser.Options): Promise<Record<string, T>>;
-};
+*/
+declare const readGitUser: (options?: readGitUser.Options) => Promise<readGitUser.User>;
 
 export = readGitUser;
