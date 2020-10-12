@@ -1,6 +1,6 @@
 {
 	"name": "read-git-user",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"description": "Reads the Github username and email from .gitconfig and return it as a json object",
 	"keywords": [
 		"git",
