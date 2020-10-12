@@ -5,7 +5,7 @@
 ## Highlights
 
 - Tiny(1.3kB :sparkles:) and simple
-- Returns the original `github-username` since the stored git `name` can be altered and not reliable. See ***[Stackoverflow#9360234](https://stackoverflow.com/a/28142874/9360234)***.
+- Returns the original `github-username` since the stored git `name` can be [altered and not reliable](https://stackoverflow.com/a/28142874/9360234). 
 - Uses [Ini](https://github.com/npm/ini) to handle the parsing of the `ini config` file
 
 ## Install
