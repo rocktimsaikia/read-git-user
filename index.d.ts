@@ -24,7 +24,7 @@ declare namespace readGitUser {
 
      (async () => {
             const gitUser = await readGitUser();
-            //=> {user: rocktimsaikia, email: rocktimsaikiagmail.com}
+            //=> {user: RocktimSaikia, email: rocktimsaikiagmail.com}
      })();
      ```
 */
