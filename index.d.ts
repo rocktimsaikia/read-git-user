@@ -1,5 +1,3 @@
-import {Options} from 'xo';
-
 declare namespace readGitUser {
 	interface Options {
 		/**
