@@ -1,15 +1,9 @@
 {
 	"name": "read-git-user",
 	"version": "2.1.0",
+	"type": "module",
 	"description": "Reads the Github username and email from .gitconfig and return it as a json object",
-	"keywords": [
-		"git",
-		"config",
-		"username",
-		"email",
-		"git username",
-		"local"
-	],
+	"keywords": ["git", "config", "username", "email", "git username", "local"],
 	"repository": "RocktimSaikia/read-git-user",
 	"license": "MIT",
 	"author": {
@@ -17,22 +11,19 @@
 		"email": "rocktimthedev@gmail.com",
 		"url": "https://rocktim.xyz"
 	},
-	"files": [
-		"index.d.ts",
-		"index.js"
-	],
+	"files": ["index.d.ts", "index.js"],
 	"scripts": {
-		"test": "xo && ava"
+		"test": "ava --no-worker-threads"
 	},
 	"dependencies": {
-		"github-username": "^5.0.1",
-		"ini": "^1.3.5"
+		"esm-utils": "^4.3.0",
+		"github-username": "^8.0.0",
+		"ini": "^4.1.3"
 	},
 	"devDependencies": {
-		"ava": "2.4.0",
-		"xo": "^0.33.1"
+		"ava": "6.1.3"
 	},
 	"engines": {
-		"node": ">=12"
+		"node": ">=18"
 	}
 }

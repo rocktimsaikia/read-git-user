@@ -1,28 +1,27 @@
-# read-git-user ![build](https://travis-ci.com/RocktimSaikia/read-git-user.svg?branch=master)
+# read-git-user
 
-> Reads the Github username and email from `.gitconfig` :wrench: and returns it as a json object
+Returns the GitHub username and email from the current local system.
 
-## Highlights
-
-- Tiny(1.3kB :sparkles:) and simple
-- Returns the original `github-username` since the stored git `name` can be [altered and not reliable](https://stackoverflow.com/a/28142874/9360234).
-- Uses [Ini](https://github.com/npm/ini) to handle the parsing of the `ini config` file
+> [!NOTE]
+> This method retrieves the original GitHub username since the stored \
+> git config name is not reliable. The name can be changed without \
+> affecting the original GitHub username.
 
 ## Install
 
 ```bash
-npm install read-git-user
+npm i read-git-user
 ```
 
 ## Usage
 
 ```js
-import readGitUser = require('read-git-user');
+import readGitUser from "read-git-user";
 
-(async () => {
-        const gitUser = await readGitUser();
-        //=> {username: RocktimsSaikia, email: rocktimthedev@gmail.com}
-})();
+const gitUser = await readGitUser();
+
+console.log(gitUser);
+// => {username: rocktimssaikia, email: rocktimthedev@gmail.com}
 ```
 
 ## API

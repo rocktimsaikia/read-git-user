@@ -26,6 +26,8 @@ declare namespace readGitUser {
      })();
      ```
 */
-declare const readGitUser: (options?: readGitUser.Options) => Promise<readGitUser.User>;
+declare const readGitUser: (
+	options?: readGitUser.Options,
+) => Promise<readGitUser.User>;
 
-export = readGitUser;
+export default readGitUser;

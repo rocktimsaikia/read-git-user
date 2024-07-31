@@ -1,17 +1,19 @@
-'use strict';
-const readUserName = require('github-username');
-const ini = require('ini');
-const path = require('path');
-const os = require('os');
-const fs = require('fs');
+"use strict";
 
-module.exports = async (options = {}) => {
+import readUserName from "github-username";
+import ini from "ini";
+import os from "node:os";
+import path from "node:path";
+import fs from "node:fs";
+
+export default async function (options = {}) {
 	const homeDir = options.dir === undefined ? os.homedir() : options.dir;
 
-	const filePath = path.resolve(homeDir, '.gitconfig');
+	const filePath = path.resolve(homeDir, ".gitconfig");
+	const gitconfig = ini.parse(await fs.promises.readFile(filePath, "utf-8"));
 
-	const {user: {email}} = ini.parse(await fs.promises.readFile(filePath, 'utf-8'));
+	const email = gitconfig.user.email;
 	const username = await readUserName(email);
 
-	return {username, email};
-};
+	return { username, email };
+}
