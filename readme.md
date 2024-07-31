@@ -3,9 +3,10 @@
 Returns the GitHub username and email of the current system's `.gitconfig`.
 
 > [!NOTE]
-> This method retrieves the original GitHub username since the stored \
-> git config name is not reliable. The name can be changed without \
-> affecting the original GitHub username.
+> This function retrieves the original GitHub username since the stored \
+> git config name is not reliable. The local name can be changed without \
+> affecting any Git or GitHub activities as long as the email matches any \
+> verified emails on the GitHub account.
 
 [![Tests](https://github.com/rocktimsaikia/read-git-user/actions/workflows/main.yml/badge.svg)](https://github.com/rocktimsaikia/read-git-user/actions/workflows/main.yml) [![npm](https://img.shields.io/npm/v/read-git-user?color=bright)](https://npmjs.com/package/read-git-user)
 
