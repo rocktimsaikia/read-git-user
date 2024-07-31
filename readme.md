@@ -7,7 +7,7 @@ Returns the GitHub username and email of the current system's `.gitconfig`.
 > git config name is not reliable. The name can be changed without \
 > affecting the original GitHub username.
 
-[![npm](https://img.shields.io/npm/v/read-git-user?color=bright)](https://npmjs.com/package/read-git-user)
+[![Tests](https://github.com/rocktimsaikia/read-git-user/actions/workflows/main.yml/badge.svg)](https://github.com/rocktimsaikia/read-git-user/actions/workflows/main.yml) [![npm](https://img.shields.io/npm/v/read-git-user?color=bright)](https://npmjs.com/package/read-git-user)
 
 ## Install
 
