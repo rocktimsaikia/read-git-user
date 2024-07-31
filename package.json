@@ -1,9 +1,16 @@
 {
 	"name": "read-git-user",
-	"version": "2.1.0",
+	"version": "3.0.0",
 	"type": "module",
 	"description": "Returns the GitHub username and email of the current system's .gitconfig",
-	"keywords": ["git", "config", "username", "email", "git username", "local"],
+	"keywords": [
+		"git",
+		"config",
+		"username",
+		"email",
+		"git username",
+		"local"
+	],
 	"repository": "RocktimSaikia/read-git-user",
 	"license": "MIT",
 	"author": {
@@ -11,7 +18,10 @@
 		"email": "rocktimthedev@gmail.com",
 		"url": "https://rocktimsaikia.dev"
 	},
-	"files": ["index.d.ts", "index.js"],
+	"files": [
+		"index.d.ts",
+		"index.js"
+	],
 	"scripts": {
 		"test": "ava --no-worker-threads"
 	},
