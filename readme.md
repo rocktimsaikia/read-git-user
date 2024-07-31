@@ -1,11 +1,13 @@
 # read-git-user
 
-Returns the GitHub username and email from the current local system.
+Returns the GitHub username and email of the current system's `.gitconfig`.
 
 > [!NOTE]
 > This method retrieves the original GitHub username since the stored \
 > git config name is not reliable. The name can be changed without \
 > affecting the original GitHub username.
+
+[![npm](https://img.shields.io/npm/v/read-git-user?color=bright)](https://npmjs.com/package/read-git-user)
 
 ## Install
 
@@ -26,19 +28,16 @@ console.log(gitUser);
 
 ## API
 
-### readGitUser(options?)
+### readGitUser(options)
 
-Returns a `Promise<object>` with the parsed JSON.
+Returns a `Promise<object>` with the retrieved git config data.
 
-#### options
+#### Options (`object`) :
 
-##### dir
+##### `dir`
 
-Type: `string`<br>
-Default: `os.homedir()`
-
-The directory of the `.gitconfig` file
-
-## License
-
-MIT © [Rocktim Saikia](https://rocktim.xyz)
+> Type: `string`<br>
+> Default: `os.homedir()`
+>
+> The directory of the `.gitconfig` file. \
+> This option is available in-case the config file is not in the default dir for some systems.
